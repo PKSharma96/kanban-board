@@ -2,9 +2,14 @@
 You are required to create an interactive Kanban board application using React JS that interacts with the provided API from  https://api.quicksell.co/v1/internal/frontend-assignment
 When a user clicks the "display" button and selects a grouping option, the Kanban board should dynamically adjust to reflect the user's choice.
 
+## Submission Details
+ - Pushpendra Kumar | GL Bajaj Institute of Technology and Management
+ - 2001920100218 
+ - pushpendrakr963@gmail.com
+
 ## Live Demo
 
- [ Visit Hosted Site Here here](https://assignement-for-quicksell.onrender.com/).
+ [ Visit Hosted Site Here here](https://dashboard-quicksell.netlify.app/).
 
 ## Features
 
@@ -30,5 +35,5 @@ When a user clicks the "display" button and selects a grouping option, the Kanba
 - React JS
 - CSS
 - Quicksell API
-- Render for Hosting
+- Netlify for Hosting
 
