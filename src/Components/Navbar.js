@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { FaGithub } from "react-icons/fa"; 
 
 const Navbar = ({ grouping: propGrouping, setGrouping, ordering: propOrdering, setOrdering, call }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -6,8 +7,9 @@ const Navbar = ({ grouping: propGrouping, setGrouping, ordering: propOrdering, s
 
   const initialGrouping = localStorage.getItem("grouping") || propGrouping;
   const initialOrdering = localStorage.getItem("ordering") || propOrdering;
-
+// eslint-disable-next-line
   const [grouping, setLocalGrouping] = useState(initialGrouping);
+  // eslint-disable-next-line
   const [ordering, setLocalOrdering] = useState(initialOrdering);
 
 //   useEffect(() => {
@@ -19,11 +21,13 @@ const Navbar = ({ grouping: propGrouping, setGrouping, ordering: propOrdering, s
   useEffect(() => {
     localStorage.setItem("grouping", grouping);
     setGrouping(grouping);
+    // eslint-disable-next-line
   }, [grouping]);
 
   useEffect(() => {
     localStorage.setItem("ordering", ordering);
     setOrdering(ordering);
+    // eslint-disable-next-line
   }, [ordering]);
 
   // Handlers
@@ -81,6 +85,16 @@ const Navbar = ({ grouping: propGrouping, setGrouping, ordering: propOrdering, s
                 <option value="title">Title</option>
               </select>
             </div>
+             {/* GitHub icon and link with inline styling */}
+      <a
+        href="https://github.com/PKSharma96/kanban-board"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="github-icon"
+        style={{ marginLeft: "15px", fontSize: "50px", color: "#000" }}
+      >
+        <FaGithub />
+      </a>
           </div>
         )}
       </div>
