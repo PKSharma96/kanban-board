@@ -1,4 +1,4 @@
-// import React, { useEffect } from "react";
+// import React from "react"; // Uncomment this line if React import is needed
 import profile from "../Assets/profile.png";
 import profile1 from "../Assets/profile1.png";
 import profile4 from "../Assets/profile4.jpeg";
@@ -18,12 +18,15 @@ const Card = ({
   ordering,
   statusMapping,
 }) => {
+  // Find user information based on userId
   const user = userData.find((user) => user.id === userId);
 
   return (
     <div className="card">
+      {/* Card Header Section */}
       <div className="card-header">
         <div className="status-heading">
+          {/* Render status icon based on grouping and statusMapping */}
           {grouping === "users" || grouping === "priority" ? (
             statusMapping[id] === "Todo" ? (
               <i className="bx bx-circle" id="todo"></i>
@@ -37,8 +40,9 @@ const Card = ({
               <i className="bx bxs-x-circle" id="cancel"></i>
             )
           ) : null}
-          <p>{id}</p>
+          <p>{id}</p> {/* Display unique identifier */}
         </div>
+        {/* Render user avatar if grouping is not "users" */}
         {grouping !== "users" ? (
           <div
             className={
@@ -71,10 +75,15 @@ const Card = ({
           </div>
         ) : null}
       </div>
+
+      {/* Card Title Section */}
       <div className="card-title">
-        <p>{title}</p>
+        <p>{title}</p> {/* Display title */}
       </div>
+
+      {/* Card Footer Section */}
       <div className="card-footer">
+        {/* Render priority icon if grouping is not "priority" */}
         {grouping !== "priority" ? (
           <div className="feature-container">
             {priority === "0" ? (
@@ -90,6 +99,8 @@ const Card = ({
             )}
           </div>
         ) : null}
+
+        {/* Render tag icons */}
         {tag?.map((value, index) => {
           return (
             <div className="feature-container" key={index}>
